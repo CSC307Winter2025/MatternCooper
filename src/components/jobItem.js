@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import GetMonthName from '@/components/util'
 
 export default function JobItem({ job }) {
   let link = "/job/"+job.id;
@@ -14,7 +15,7 @@ export default function JobItem({ job }) {
             }>{job.name}</span>
             </Link>
         </span>
-        <span className="ml-2">{job.date}</span>
+        <span className="ml-2">{GetMonthName(job.month)} {job.year}</span>
     </li>
   )
 }
