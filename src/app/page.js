@@ -1,5 +1,6 @@
 import JobItem from '@/components/jobItem';
 import NewJobForm from '@/components/newJobForm'
+import prisma from '@/lib/prisma'
 import '@/style/global.css';
 
 
