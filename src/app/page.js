@@ -16,21 +16,11 @@ export default async function Home() {
 
   return (
     <div>
-      <div className="flex justify-center w-full bg-gray-500 p-4">
-        <span className="text-2xl font-bold">Cooper Mattern</span>
-      </div>
-
-      <div className="flex bg-gray-100 p-2">
-        <div className="flex-1 flex justify-start">cnamatten@gmail.com</div>
-        <div className="flex-1 flex justify-center">github.com/bobjoe400</div>
-        <div className="flex-1 flex justify-end">425-419-6866</div>
-      </div>
-
       <div className="flex-row pl-5 pr-5 pb-5">
         <div className ="flex-1 flex bg-gray-400 border-2 border-black">
-          <div className="flex-1 justifiy-start border-black border-r-4">
-            <div className="flex justify-between items-center">
-              <span className="text-xl font-bold pl-2">Job List</span>
+          <div className="flex-1 justifiy-start border-black border-r-2">
+            <div className="flex justify-between">
+              <h2 className="text-xl font-bold pl-5 pt-5">Job List</h2>
               <span className="p-4">
                 <Link
                   href="/new-job-form"
@@ -40,7 +30,7 @@ export default async function Home() {
                 </Link>
               </span>
             </div>
-            <div className='pl-3'>{ jobHtml }</div>
+            <div className='pl-5'>{ jobHtml }</div>
           </div>
           
           

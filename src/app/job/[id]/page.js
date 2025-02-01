@@ -1,4 +1,4 @@
-import HomeButton from '@/components/backButton';
+import HomeButton from '@/components/homeButton';
 import UpdateJobForm from '@/components/updateJobForm';
 import prisma from '@/lib/prisma';
 import '@/style/global.css';
@@ -19,10 +19,9 @@ export default async function Job(props) {
 
   return (
     <div>
-      <HomeButton />
-      <div className='p-5'>
-        <div className='bg-gray-400 flex justify-between items-center pb-5'>
-          <div className='flex-1 pl-5 pt-5 justify-start'>
+      <div className='pl-5 pr-5 pb-5 '>
+        <div className='bg-gray-400 flex justify-between items-center border-2 border-black'>
+          <div className='flex-1 pl-5 pt-5 justify-start border-r-2 border-black pb-5'>
             <p className="text-xl font-bold">Job Information</p>
             <div className="p-5 bg-white shadow-md max-w-lg rounded-xl">
               {[
@@ -48,7 +47,7 @@ export default async function Job(props) {
               ))}
             </div>
           </div>
-          <div className='flex-1 pr-5'>
+          <div className='flex-1 pr-5 pl-5'>
             <p className="text-xl font-bold">Edit Job</p>
             <UpdateJobForm job={job} />
           </div>

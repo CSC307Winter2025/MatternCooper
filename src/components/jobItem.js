@@ -12,8 +12,8 @@ export default function JobItem({ job }) {
             <Link  href={`/job/${job.id}`}>
             <span className={`
                 underline
-                text-blue-500
-                hover:text-blue-700`
+                text-blue-600
+                hover:text-blue-800`
             }>{job.name}</span>
             </Link>
         </span>
