@@ -29,5 +29,7 @@ export async function updateJob(formData) {
     await prisma.job.update({where: {id: Number(formData.get('id')),},
         data: job
     });
-    redirect('/');
+
+    const id = String(formData.get('id'));
+    redirect('/job/'+id);
 }

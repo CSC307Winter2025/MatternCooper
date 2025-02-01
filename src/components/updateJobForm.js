@@ -2,11 +2,11 @@ import { updateJob } from '@/actions';
 
 export default function UpdateJobForm({job}){
 
-    let date = job.year+'-'+String(job.month).padStart(2, '0');
+    let date = String(job.year).padStart(4,'0')+'-'+String(job.month).padStart(2, '0');
     console.log(date);
 
     return (
-        <form action={updateJob} className="w-2/4 p-4 space-y-4">
+        <form action={updateJob}>
           <input type='hidden' name='id' value={job.id} />
           <div className="grid grid-cols-2 gap-4">
             {/* Name and Date on the same row */}
@@ -70,7 +70,7 @@ export default function UpdateJobForm({job}){
           <div className="flex justify-end">
             <input 
               type="submit" 
-              value="Submit" 
+              value="Update Job" 
               className={`
               bg-blue-500 
               text-white px-4 py-2 rounded-md shadow 

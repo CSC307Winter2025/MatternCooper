@@ -1,7 +1,9 @@
 import JobItem from '@/components/jobItem';
-import NewJobForm from '@/components/newJobForm'
+import SkillsList from '@/components/skillsList';
 import prisma from '@/lib/prisma'
+
 import '@/style/global.css';
+import Link from 'next/link';
 
 
 export default async function Home() {
@@ -23,12 +25,30 @@ export default async function Home() {
         <div className="flex-1 flex justify-end">425-419-6866</div>
       </div>
 
-      <h2 className="text-xl font-bold">Job List</h2>
-
-      { jobHtml }      
-
-      <br/>
-      <NewJobForm/>
+      <div className="flex-row pl-5 pr-5">
+        <div className ="flex-1 flex bg-gray-400">
+          <div className="flex-1 justifiy-start border-black border-r-4">
+            <div className="flex justify-between items-center">
+              <span className="text-xl font-bold pl-2">Job List</span>
+              <span className="p-4">
+                <Link
+                  href="/new-job-form"
+                  className="text-white bg-blue-500 px-4 py-2 rounded-md hover:bg-blue-600"
+                >
+                  Add a New Job
+                </Link>
+              </span>
+            </div>
+            <div className='pl-3'>{ jobHtml }</div>
+          </div>
+          
+          
+          <div className="flex-1 justify-end pl-2 pb-5">
+            <h2 className="text-xl font-bold">Skills</h2>
+            <div>{SkillsList()}</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
