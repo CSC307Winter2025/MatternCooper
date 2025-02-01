@@ -20,28 +20,36 @@ export default async function Job(props) {
   return (
     <div>
       <HomeButton />
-      <div className='pl-5 pr-5'>
+      <div className='p-5'>
         <div className='bg-gray-400 flex justify-between items-center pb-5'>
           <div className='flex-1 pl-5 pt-5 justify-start'>
-            <div className="grid grid-cols-2 gap-4 p-4 bg-white shadow-md max-w-md rounded-xl">
-              <div className="font-semibold text-gray-700">Id:</div>
-              <div>{job.id}</div>
-              <div className="font-semibold text-gray-700">Name:</div>
-              <div>{job.name}</div>
-              <div className="font-semibold text-gray-700">Date:</div>
-              <div>{GetMonthName(job.month)}, {job.year}</div>
-              <div className="font-semibold text-gray-700">Description:</div>
-                <div>
-                  <textarea
-                    readOnly
-                    value={job.description}
-                    className="w-full h-32 p-2 border border-gray-300 rounded-md bg-gray-50 resize-none focus:outline-none"
-                  />
-              </div>
+            <p className="text-xl font-bold">Job Information</p>
+            <div className="p-5 bg-white shadow-md max-w-lg rounded-xl">
+              {[
+                { label: "ID:", value: job.id },
+                { label: "Name:", value: job.name },
+                { label: "Date:", value: `${GetMonthName(job.month)}, ${job.year}` },
+                { label: "Description:", value: job.description },
+              ].map((item, index) => (
+                <div key={index} className="flex mb-2">
+                  <div className="w-1/3 font-semibold text-gray-700">{item.label}</div>
+                  <div className="w-2/3">
+                    {item.label === "Description:" ? (
+                      <textarea
+                        readOnly
+                        value={item.value}
+                        className="w-full h-32 p-2 border border-gray-300 rounded-md bg-gray-50 resize-none focus:outline-none"
+                      />
+                    ) : (
+                      <span>{item.value}</span>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
           <div className='flex-1 pr-5'>
-            <p className="text-xl font-bold pb-0 pt-5">Edit Job</p>
+            <p className="text-xl font-bold">Edit Job</p>
             <UpdateJobForm job={job} />
           </div>
         </div>

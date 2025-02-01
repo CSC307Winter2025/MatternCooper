@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import GetMonthName from '@/components/util';
-import { X } from "lucide-react";
 
 export default function JobItem({ job }) {
   let link = "/job/"+job.id;

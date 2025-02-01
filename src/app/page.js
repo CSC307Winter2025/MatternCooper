@@ -1,4 +1,5 @@
 import JobItem from '@/components/jobItem';
+import ProjectsList from '@/components/projectsList';
 import SkillsList from '@/components/skillsList';
 import prisma from '@/lib/prisma'
 
@@ -25,8 +26,8 @@ export default async function Home() {
         <div className="flex-1 flex justify-end">425-419-6866</div>
       </div>
 
-      <div className="flex-row pl-5 pr-5">
-        <div className ="flex-1 flex bg-gray-400">
+      <div className="flex-row pl-5 pr-5 pb-5">
+        <div className ="flex-1 flex bg-gray-400 border-2 border-black">
           <div className="flex-1 justifiy-start border-black border-r-4">
             <div className="flex justify-between items-center">
               <span className="text-xl font-bold pl-2">Job List</span>
@@ -43,9 +44,16 @@ export default async function Home() {
           </div>
           
           
-          <div className="flex-1 justify-end pl-2 pb-5">
-            <h2 className="text-xl font-bold">Skills</h2>
-            <div>{SkillsList()}</div>
+          <div className="flex-1 justify-end pb-5">
+            <div className='pl-2 pb-2 border-b-2 border-black'>
+              <h2 className="text-xl font-bold">Skills</h2>
+              <div>{SkillsList()}</div>
+            </div>
+
+            <div className='pl-2 pb-2'>
+              <h2 className="text-xl font-bold">Projects</h2>
+              <div>{ProjectsList()}</div>
+            </div>
           </div>
         </div>
       </div>
